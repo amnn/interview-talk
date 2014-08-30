@@ -114,6 +114,15 @@ In general, the type of a function `f` with `k` arguments whose types are
 
     f :: t_1 -> t_2 -> ... -> t_k -> r
 
+Functions are called as follows
+
+```haskell
+increment 1 -- = 2
+add 2 3 -- = 5
+```
+
+*Note: no parenthesese, no commas*
+
 ## Guards
 
 The same function can be given multiple definitions based on whether its
