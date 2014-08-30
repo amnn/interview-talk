@@ -196,7 +196,7 @@ But they are a bit out of the scope of this introduction.
 
 ### Lists
 
-Pattern matching on lists are a very powerful concept in Haskell, a list can
+Pattern matching on lists is a very powerful concept in Haskell, a list can
 either be empty, or it can be an element followed by the rest of the list
 (which is another list). The syntax for this is similar to that of creating a
 list:
