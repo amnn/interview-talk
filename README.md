@@ -59,13 +59,13 @@ after this, it will hold the value `3` for the entire runtime of the program.
 
 Other basic types include:
 
- * `Integer` An arbitrary precision integer type: unlike `Int`, `Integer` can
-   hold arbitrarily large numbers (as long as you have enough memory to hold
-   them).
- * `Float` A single precision floating point number
- * `Double` A double precision floating point number
- * `Bool` can be either `True` or `False`
- * `Char` Unicode characters
+Type      | Description
+--------- | -----------
+`Integer` | An arbitrary precision integer type: unlike `Int`, `Integer` can hold arbitrarily large numbers (as long as you have enough memory to hold them).
+`Float`   | A single precision floating point number
+`Double`  | A double precision floating point number
+`Bool`    | can be either `True` or `False`
+`Char`    | Unicode characters
 
 ## Lists
 
