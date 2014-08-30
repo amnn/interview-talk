@@ -59,18 +59,56 @@ module Main where
     -- Main Function, to test the functions you've created.
     main :: IO ()
     main = do
-      putStr "Fibs 0 - 10: "
-      print (map fib [0..10] == [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89])
+      putStr "fib 0: "
+      print (fib 0 == 1)
 
-      putStr "isQorR: "
-      print (isQorR 'q' && isQorR 'r' && not (isQorR 'p') && not (isQorR 'a'))
+      putStr "fib 1: "
+      print (fib 1 == 1)
 
-      putStr "qCount: "
-      print (qCount "" == 0 && qCount "qqqq" == 4 && qCount "qr" == 4)
+      putStr "Fibs 0..5: "
+      print (map fib [0..5] == [1,1,2,3,5,8])
 
-      putStr "scribble: "
-      print (scribble "pq" &&
-             scribble "pqr" &&
-             not (scribble "pqrz") &&
-             not (scribble "qpr") &&
-             not (scribble "pr"))
+      putStr "Fibs 0..10: "
+      print (map fib [0..10] == [1,1,2,3,5,8,13,21,34,55,89])
+
+      putStr "isQorR 'q': "
+      print (isQorR 'q')
+
+      putStr "isQorR 'r': "
+      print (isQorR 'r')
+
+      putStr "isQorR 'a'..'p': "
+      print (all not [isQorR c| c <- ['a'..'p']])
+
+      putStr "isQorR 's'..'z': "
+      print (all not [isQorR c| c <- ['s'..'z']])
+
+      putStr "qCount \"\": "
+      print (qCount "" == 0)
+
+      putStr "qCount \"qqqq\": "
+      print (qCount "qqqq" == 4)
+
+      putStr "qCount \"qr\": "
+      print (qCount "qr" == 4)
+
+      putStr "qCount \"qra\": "
+      print (qCount "qra" == 4)
+
+      putStr "scribble \"pq\": "
+      print (scribble "pq")
+
+      putStr "scribble \"pqq\": "
+      print (scribble "pqq")
+
+      putStr "scribble \"pqr\": "
+      print (scribble "pqr")
+
+      putStr "scribble \"qpr\": "
+      print (not (scribble "qpr"))
+
+      putStr "scribble \"pr\": "
+      print (not (scribble "pr"))
+
+      putStr "scribble \"pqrz\": "
+      print (not (scribble "pqrz"))
