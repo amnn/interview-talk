@@ -182,3 +182,24 @@ isZero = (== 0)
 ```
 
 But they are a bit out of the scope of this introduction.
+
+### Lists
+
+Pattern matching on lists are a very powerful concept in Haskell, a list can
+either be empty, or it can be an element followed by the rest of the list
+(which is another list). The syntax for this is similar to that of creating a
+list:
+
+```haskell
+length :: [a] -> Int
+length [] = 0
+length (x:xs) = 1 + length xs
+```
+
+`length` is defined to work on any list (the `a` is a type variable) and
+returns an integer: the size of the list.
+
+The pattern matching over the list in `length` is idiomatic: We define the
+function for an empty list, and then for the non-empty list. In the case of
+`length`, the length of an empty list is 0, and the length of a non-empty list
+is one more than the size of the rest of the list.
