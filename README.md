@@ -81,6 +81,18 @@ type called `String`:
 
     "hello" == ['h', 'e', 'l', 'l', 'o']
 
+Lists are constructed using the `:` operator (pronounced **cons**). It takes
+a value as its first argument and a list of values as its second, and returns
+a list with the first argument at the front, the second argument as the rest
+of the list:
+
+```haskell
+1:[2, 3] = [1, 2, 3] = 1 : 2 : 3 : []
+```
+
+As a result, lists in Haskell are either empty, or are an element followed
+by another list.
+
 ## Functions
 
 ```haskell
@@ -129,3 +141,44 @@ is called, the arguments are checked against each guard in the order they
 were written, and the value of the expression for the first matchign guard is
 Returned. (`otherwise` is actually just `True`, and is used as the default or
 else case, which will always run if none of the other cases do).
+
+## Pattern Matching
+
+Pattern matching is another way of having a function behave differently based
+on properties of its parameters.
+
+### Basic Types
+
+With basic types (the numeric types, bools and chars) pattern matching is
+only as powerful as equality:
+
+```haskell
+isZero :: Int -> Bool
+isZero 0 = True
+isZero n = False
+```
+
+This works similarly to guards: When `isZero` is called, its argument is
+compared to each pattern in turn, from top to bottom, until one matches, in
+which case its expression is evaluated and returned.
+
+In fact, this is so similar to guards that here is the same function defined
+using guards:
+
+```haskell
+isZero n
+  | n == 0    = True
+  | otherwise = False
+```
+
+There are actually some much better ways of defining `isZero`:
+
+```haskell
+isZero n = n == 0
+```
+
+```haskell
+isZero = (== 0)
+```
+
+But they are a bit out of the scope of this introduction.
