@@ -1,5 +1,7 @@
 # Haskell
 
+Summarised from (here)[http://www.seas.upenn.edu/~cis194/lectures/01-intro.html]
+
 Haskell is a *functional*, *statically typed*, *pure*, *lazy* programming
 language.
 
