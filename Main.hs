@@ -28,8 +28,10 @@ module Main where
     -- Every `q` in the string counts for 1 `q` and every `r` counts for 3.
 
     qCount :: String -> Int
-    qCount []     = undefined
-    qCount (x:xs) = undefined
+    qCount []       = undefined
+    qCount ('q':xs) = undefined
+    qCount ('r':xs) = undefined
+    qCount (_:xs)   = undefined
 
     -- Task 4
     -- ------
@@ -69,5 +71,6 @@ module Main where
       putStr "scribble: "
       print (scribble "pq" &&
              scribble "pqr" &&
+             not (scribble "pqrz") &&
              not (scribble "qpr") &&
              not (scribble "pr"))
