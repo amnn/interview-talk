@@ -1,6 +1,7 @@
 # Haskell
 
 Summarised from: http://www.seas.upenn.edu/~cis194/lectures/01-intro.html
+
 Additional help: http://www.haskell.org/haskellwiki/Reference_card
 
 Haskell is a *functional*, *statically typed*, *pure*, *lazy* programming
