@@ -77,7 +77,9 @@ xs = [1, 2, 3]
 of type `a`.
 
 Haskell also supports lists of type `Char` (`[Char]`) natively as a
-type called `String`: `"hello" == ['h', 'e', 'l', 'l', 'o']`.
+type called `String`:
+
+    "hello" == ['h', 'e', 'l', 'l', 'o']
 
 ## Functions
 
@@ -99,3 +101,31 @@ In general, the type of a function `f` with `k` arguments whose types are
 `t_1`, `t_2`, ..., `t_k`, which returns a value of type `r` is:
 
     f :: t_1 -> t_2 -> ... -> t_k -> r
+
+## Guards
+
+The same function can be given multiple definitions based on whether its
+arguments match certain conditions.
+
+Consider the function `sign :: Int -> String`. We want it to return `"pos"` if
+the value it is given is greater than or equal to 0, or `"neg"` otherwise.
+
+It could be written like this:
+
+```haskell
+sign x = if x >= 0 then "pos" else "neg"
+```
+
+But it is more common in haskell to see this written as
+
+```haskell
+sign x
+  | x >= 0    = "pos"
+  | otherwise = "neg"
+```
+
+The stuff after the vertical bars is the **guard**. When the `sign` function
+is called, the arguments are checked against each guard in the order they
+were written, and the value of the expression for the first matchign guard is
+Returned. (`otherwise` is actually just `True`, and is used as the default or
+else case, which will always run if none of the other cases do).
