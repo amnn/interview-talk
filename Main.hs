@@ -33,17 +33,17 @@ linFib n = linFibHelper 1 1 n
     linFibHelper curr next 0 = undefined
     linFibHelper curr next n = undefined
 
-data Mat = Mat { a, b, c, d :: Int } deriving (Eq, Show)
+data Mat = Mat { a, b, c, d :: Integer } deriving (Eq, Show)
 
 -- Task 3
 -- ------
 --
 -- Define Matrix multiplication, according to the following rule:
 --
---     +-----+   +-----+   +----------------------+
---     | a b | * | e f | = | a*e + b*g, a*f + b*h |
---     | c d |   | g h |   | c*e + d*g, c*f + d*h |
---     +-----+   +-----+   +----------------------+
+--     +-----+   +-----+   +--------------+
+--     | a b | * | e f | = | ae+bg, af+bh |
+--     | c d |   | g h |   | ce+dg, cf+dh |
+--     +-----+   +-----+   +--------------+
 
 mul :: Mat -> Mat -> Mat
 mul (Mat a b c d) (Mat e f g h) = undefined
@@ -69,8 +69,6 @@ fastExp  m n
 
 logFib :: Int -> Integer
 logFib n = undefined
-  where
-    q = Mat 1 1 1 0
 
 -- Main Function, to test the functions you've created.
 main :: IO ()
@@ -80,14 +78,16 @@ main = do
   check "logFib" logFib
   where
     check name fn = do
-      putStr (name ++ " 0: ")
+      putStr (name ++ " 0:     ")
       print (fn 0 == 1)
 
-      putStr (name ++ " 1: ")
+      putStr (name ++ " 1:     ")
       print (fn 1 == 1)
 
-      putStr (name ++ " 0..5: ")
+      putStr (name ++ " 0..5:  ")
       print (map fn [0..5] == [1,1,2,3,5,8])
 
       putStr (name ++ " 0..10: ")
       print (map fn [0..10] == [1,1,2,3,5,8,13,21,34,55,89])
+
+      putStrLn ""
