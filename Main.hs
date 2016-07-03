@@ -1,114 +1,93 @@
 module Main where
 
-    -- Task 1
-    -- ------
-    -- Complete the definition of `fib` which defines the fibonacci
-    -- sequence.
+-- Task 1
+-- ------
 
-    fib :: Int -> Integer
-    fib 0 = undefined
-    fib 1 = undefined
-    fib n = undefined
+-- Complete the definition of `expFib` so that `expFib n` calculates the
+-- nth Fibonacci Number, using a naive translation of the recursive
+-- definition:
+--
+--     F(0) = 1
+--     F(1) = 1
+--     F(n) = F(n-1) + F(n-2)
 
-    -- Task 2
-    -- ------
-    -- Complete the definition of `isQorR` to return `True` if and only if
-    -- its argument is 'q' or 'r'.
+expFib :: Int -> Integer
+expFib 0 = undefined
+expFib 1 = undefined
+expFib n = undefined
 
-    isQorR :: Char -> Bool
-    isQorR c = undefined
+-- Task 2
+-- ------
 
-    allQsOrRs :: String -> Bool
-    allQsOrRs = all isQorR
+-- `linFib` also calculates the Fibonacci numbers, but this time by using a
+-- helper function: `linFibHelper`, which is given three parameters.
+--
+--   - `curr` represents the current fibonacci number
+--   - `next` represents the fibonacci number following it
+--   - `n` is the distance from the current fibonacci number to the one we
+--      want.
 
-    -- Task 3
-    -- ------
-    -- This function returns the number of q's needed after all the Rule 1's
-    -- are applied when generating a string in the Scribble game.
-    -- Every `q` in the string counts for 1 `q` and every `r` counts for 3.
+linFib :: Int -> Integer
+linFib n = linFibHelper 1 1 n
+  where
+    linFibHelper curr next 0 = undefined
+    linFibHelper curr next n = undefined
 
-    qCount :: String -> Int
-    qCount []       = undefined
-    qCount ('q':xs) = undefined
-    qCount ('r':xs) = undefined
-    qCount (_:xs)   = undefined
+data Mat = Mat { a, b, c, d :: Int } deriving (Eq, Show)
 
-    -- Task 4
-    -- ------
-    -- This function decides whether a given word can be reached by playing
-    -- the Scribble game. The conditions for a word being reachable are:
-    --
-    --   * Must start with a 'P'
-    --   * The P must be followed by a string of Qs and Rs
-    --   * That string can either be "q" or the `qCount` mod 6 must be either
-    --     2 or 4.
-    --
-    -- Hint 1: The first condition is already dealt with using the pattern
-    -- matching in the template below.
-    --
-    -- Hint 2: the qCount of the string, modulo 6 is provided as the variable
-    -- `qs`.
+-- Task 3
+-- ------
+--
+-- Define Matrix multiplication, according to the following rule:
+--
+--     +-----+   +-----+   +----------------------+
+--     | a b | * | e f | = | a*e + b*g, a*f + b*h |
+--     | c d |   | g h |   | c*e + d*g, c*f + d*h |
+--     +-----+   +-----+   +----------------------+
 
-    scribble :: String -> Bool
-    scribble ('p':xs) = undefined
-      where
-        qs = qCount xs `mod` 6
+mul :: Mat -> Mat -> Mat
+mul (Mat a b c d) (Mat e f g h) = undefined
 
-    scribble _ = False
+-- Task 4
+-- ------
+--
+-- The fast exponentiation algorithm. If `n` is even, we proceed by
+-- exponentiating the square of the matrix by half of `n`. If `n` is odd we
+-- take the matrix to the `n-1`th power, and then multiple that with itself.
 
-    -- Main Function, to test the functions you've created.
-    main :: IO ()
-    main = do
-      putStr "fib 0: "
-      print (fib 0 == 1)
+fastExp :: Mat -> Int -> Mat
+fastExp  m 0 = undefined
+fastExp  m n
+  | even n    = undefined
+  | otherwise = undefined
 
-      putStr "fib 1: "
-      print (fib 1 == 1)
+-- Task 5
+-- ------
+--
+-- Define the fibonacci sequence using fast matrix
+-- exponentiation, as `logFib`. (Challenging!)
 
-      putStr "Fibs 0..5: "
-      print (map fib [0..5] == [1,1,2,3,5,8])
+logFib :: Int -> Integer
+logFib n = undefined
+  where
+    q = Mat 1 1 1 0
 
-      putStr "Fibs 0..10: "
-      print (map fib [0..10] == [1,1,2,3,5,8,13,21,34,55,89])
+-- Main Function, to test the functions you've created.
+main :: IO ()
+main = do
+  check "expFib" expFib
+  check "linFib" linFib
+  check "logFib" logFib
+  where
+    check name fn = do
+      putStr (name ++ " 0: ")
+      print (fn 0 == 1)
 
-      putStr "isQorR 'q': "
-      print (isQorR 'q')
+      putStr (name ++ " 1: ")
+      print (fn 1 == 1)
 
-      putStr "isQorR 'r': "
-      print (isQorR 'r')
+      putStr (name ++ " 0..5: ")
+      print (map fn [0..5] == [1,1,2,3,5,8])
 
-      putStr "isQorR 'a'..'p': "
-      print (all not [isQorR c| c <- ['a'..'p']])
-
-      putStr "isQorR 's'..'z': "
-      print (all not [isQorR c| c <- ['s'..'z']])
-
-      putStr "qCount \"\": "
-      print (qCount "" == 0)
-
-      putStr "qCount \"qqqq\": "
-      print (qCount "qqqq" == 4)
-
-      putStr "qCount \"qr\": "
-      print (qCount "qr" == 4)
-
-      putStr "qCount \"qra\": "
-      print (qCount "qra" == 4)
-
-      putStr "scribble \"pq\": "
-      print (scribble "pq")
-
-      putStr "scribble \"pqq\": "
-      print (scribble "pqq")
-
-      putStr "scribble \"pqr\": "
-      print (scribble "pqr")
-
-      putStr "scribble \"qpr\": "
-      print (not (scribble "qpr"))
-
-      putStr "scribble \"pr\": "
-      print (not (scribble "pr"))
-
-      putStr "scribble \"pqrz\": "
-      print (not (scribble "pqrz"))
+      putStr (name ++ " 0..10: ")
+      print (map fn [0..10] == [1,1,2,3,5,8,13,21,34,55,89])

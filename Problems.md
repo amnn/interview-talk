@@ -1,11 +1,3 @@
-# Lilypad Lunacy
-
-Eleven lily pads are numbered from 0 to 10. A frog starts on pad 0 and wants to get to pad 10. At each jump, the frog can move forward by one or two pads, so there are many ways it can get to pad 10. For example, it can make 10 jumps of one pad, 1111111111, or five jumps of two pads, 22222, or go 221212 or 221122, and so on. We'll call each of these ways different, even if the frog takes the same jumps in a different order.
-
-How many different ways are there of getting from 0 to 10?
-
-* * *
-
 # Scribble
 
 The game of Scribble is played with an inexhaustible supply of tiles, and consists of forming ‘words’ according to certain rules. Since each tile bears one of the letters *P*, *Q*, or *R*, these are not words that will be found in any ordinary dictionary. The game begins with the word “PQ” on the board; each move consists of applying one of the following rules:
@@ -34,6 +26,14 @@ The game of Scribble is played with an inexhaustible supply of tiles, and consis
    d. “PR”
 
 2. Given *any* word, how can you decide whether it can be made or not?
+
+* * *
+
+# Lilypad Lunacy
+
+Eleven lily pads are numbered from 0 to 10. A frog starts on pad 0 and wants to get to pad 10. At each jump, the frog can move forward by one or two pads, so there are many ways it can get to pad 10. For example, it can make 10 jumps of one pad, 1111111111, or five jumps of two pads, 22222, or go 221212 or 221122, and so on. We'll call each of these ways different, even if the frog takes the same jumps in a different order.
+
+How many different ways are there of getting from 0 to 10?
 
 * * *
 

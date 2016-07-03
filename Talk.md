@@ -3,10 +3,9 @@
 **Intro:**
 
 - Ashok
-- 3rd year Computer Scientist at Oxford
+- Just finished a Masters in Computing at Oxford
 - Left Wilsons in 2012
-- Oxbridge interview process
-    - (My experience is with Oxford, but can be applied to Cambridge/Imperial also)
+- Oxford's interview process
 
 * * *
 
@@ -14,9 +13,9 @@
 
 - Lots of applicants → Need more differentiation.
     - Oxford, Cambridge, Imperial already have more differentiation
-        - Oxford: MAT
-        - Cambridge: STEP/TSA/Test at Interview
-        - Imperial: Steeper Offers
+    - Oxford: MAT
+    - Cambridge: STEP/TSA/Test at Interview.
+    - Imperial: Used to be just steeper offers, now they also use the MAT.
 - The teaching style.
     - Oxford and Cambridge are some of the only establishments that use the tutorial or supervision system in teaching
         - 2-6, hour long tutorials a week.
