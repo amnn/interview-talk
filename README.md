@@ -149,8 +149,8 @@ sign x
 
 The stuff after the vertical bars is the **guard**. When the `sign` function
 is called, the arguments are checked against each guard in the order they
-were written, and the value of the expression for the first matchign guard is
-Returned. (`otherwise` is actually just `True`, and is used as the default or
+were written, and the value of the expression for the first matching guard is
+returned. (`otherwise` is actually just `True`, and is used as the default or
 else case, which will always run if none of the other cases do).
 
 ## Pattern Matching
