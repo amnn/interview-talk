@@ -33,10 +33,20 @@ linFib n = linFibHelper 1 1 n
     linFibHelper curr next 0 = undefined
     linFibHelper curr next n = undefined
 
-data Mat = Mat { a, b, c, d :: Integer } deriving (Eq, Show)
-
 -- Task 3
 -- ------
+--
+-- `Mat` is a data-type representing 2x2 matrices, such that `Mat a b c d`
+-- represents the matrix:
+--
+--     +-----+
+--     | a b |
+--     | c d |
+--     +-----+
+--
+-- Furthermore, given a matrix `m`, `a m`, `b m`, `c m`, and `d m` will extract
+-- the top-left, top-right, bottom-left and bottom-right elements of `m`
+-- respectively.
 --
 -- Define Matrix multiplication, according to the following rule:
 --
@@ -44,6 +54,11 @@ data Mat = Mat { a, b, c, d :: Integer } deriving (Eq, Show)
 --     | a b | * | e f | = | ae+bg, af+bh |
 --     | c d |   | g h |   | ce+dg, cf+dh |
 --     +-----+   +-----+   +--------------+
+--
+-- as the function `mul`.
+
+data Mat = Mat { a, b, c, d :: Integer } deriving (Eq, Show)
+
 
 mul :: Mat -> Mat -> Mat
 mul (Mat a b c d) (Mat e f g h) = undefined
