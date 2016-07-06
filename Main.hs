@@ -76,21 +76,23 @@ fastExp  m n
   | even n    = undefined
   | otherwise = undefined
 
--- Task 5
+-- Task 5 (Challenging!)
 -- ------
 --
 -- Define the fibonacci sequence using fast matrix
--- exponentiation, as `logFib`. (Challenging!)
+-- exponentiation, as `logFib`.
 
 logFib :: Int -> Integer
 logFib n = undefined
 
--- Task 6
+-- Task 6 (Challenging!)
 -- ------
 --
 -- Because Haskell is lazy, we may define the value `fibs`, which is the
 -- infinite list of all Fibonacci numbers. What would be the most efficient
 -- technique to use, in computing this value?
+--
+-- Hint: Depending on the tactic used, a helper function may be useful.
 
 fibs :: [Int]
 fibs = undefined
