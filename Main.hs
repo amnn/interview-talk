@@ -2,8 +2,8 @@ module Main where
 
 -- Task 1
 -- ------
-
--- Complete the definition of `expFib` so that `expFib n` calculates the
+--
+-- Complete the definition of `fibFib` so that `fibFib n` calculates the
 -- nth Fibonacci Number, using a naive translation of the recursive
 -- definition:
 --
@@ -11,14 +11,14 @@ module Main where
 --     F(1) = 1
 --     F(n) = F(n-1) + F(n-2)
 
-expFib :: Int -> Integer
-expFib 0 = undefined
-expFib 1 = undefined
-expFib n = undefined
+fibFib :: Int -> Integer
+fibFib 0 = undefined
+fibFib 1 = undefined
+fibFib n = undefined
 
 -- Task 2
 -- ------
-
+--
 -- `linFib` also calculates the Fibonacci numbers, but this time by using a
 -- helper function: `linFibHelper`, which is given three parameters.
 --
@@ -73,7 +73,7 @@ logFib n = undefined
 -- Main Function, to test the functions you've created.
 main :: IO ()
 main = do
-  check "expFib" expFib
+  check "fibFib" fibFib
   check "linFib" linFib
   check "logFib" logFib
   where
