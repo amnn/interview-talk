@@ -85,6 +85,16 @@ fastExp  m n
 logFib :: Int -> Integer
 logFib n = undefined
 
+-- Task 6
+-- ------
+--
+-- Because Haskell is lazy, we may define the value `fibs`, which is the
+-- infinite list of all Fibonacci numbers. What would be the most efficient
+-- technique to use, in computing this value?
+
+fibs :: [Int]
+fibs = undefined
+
 -- Main Function, to test the functions you've created.
 main :: IO ()
 main = do
